@@ -1,0 +1,14 @@
+{
+	"private": true,
+	"homepage": "https://them.es",
+	"author": "them.es",
+	"description": "Calendas Events calendar plugin for WordPress",
+	"license": "GPLv2+",
+	"prettier": "@wordpress/prettier-config",
+	"scripts": {
+		"create-languagefile": "wp i18n make-pot . languages/calendas.pot --exclude=assets,blocks/node_modules,node_modules,vendor --headers='{\"Report-Msgid-Bugs-To\":\"https://github.com/them-es/calendas/issues\"}'",
+		"watch": "webpack serve && wp-scripts start",
+    "build-blocks": "cd ./blocks/ && npm run build",
+		"build": "wp-scripts build",
+	}
+}
