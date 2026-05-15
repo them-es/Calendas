@@ -93,6 +93,7 @@ store('calendas', {
 				after: today,
 				before: nextYear,
 				lang: lang,
+				'upcoming-events': true,
 			});
 
 			let content = '';

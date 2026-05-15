@@ -3,7 +3,7 @@
  * Plugin Name: Calendas
  * Plugin URI: https://wordpress.org/plugins/calendas
  * Description: 📅 A modern events calendar plugin for WordPress
- * Version: 0.9.0
+ * Version: 0.9.1
  * Author: them.es
  * Author URI: https://them.es
  * Text Domain: calendas

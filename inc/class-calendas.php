@@ -292,7 +292,7 @@ class Calendas {
 		);
 
 		/**
-		 * REST query: Order custom Post type by meta key in ascending order.
+		 * REST query: Order custom post type by meta key in ascending order.
 		 * https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/extending-the-query-loop-block/#making-your-custom-query-work-on-the-editor-side
 		 *
 		 * @param array           $args    Array of arguments for WP_Query.
@@ -303,6 +303,11 @@ class Calendas {
 		add_filter(
 			'rest_' . self::EVENT_CPT . '_query',
 			function ( $args, $request ): array {
+				// The Upcoming Events widget does not make use of the customizations below.
+				if ( ! empty( $request->get_param( 'upcoming-events' ) ) ) {
+					return $args;
+				}
+
 				$args['order']    = 'ASC';
 				$args['orderby']  = 'meta_value';
 				$args['meta_key'] = '_' . self::EVENT_START_TIMESTAMP;
@@ -1044,7 +1049,7 @@ class Calendas {
 			$url       = esc_html( get_post_meta( $post_id, '_' . self::VENUE_URL, true ) );
 			$email     = esc_html( get_post_meta( $post_id, '_' . self::VENUE_EMAIL, true ) );
 			$phone     = esc_html( get_post_meta( $post_id, '_' . self::VENUE_PHONE, true ) );
-			$address   = wp_kses( get_post_meta( $post_id, '_' . self::VENUE_ADDRESS, true ) );
+			$address   = wp_kses_post( get_post_meta( $post_id, '_' . self::VENUE_ADDRESS, true ) );
 			$postcode  = esc_html( get_post_meta( $post_id, '_' . self::VENUE_POSTCODE, true ) );
 			$city      = esc_html( get_post_meta( $post_id, '_' . self::VENUE_CITY, true ) );
 			$state     = esc_html( get_post_meta( $post_id, '_' . self::VENUE_STATE, true ) );
@@ -1055,7 +1060,7 @@ class Calendas {
 				esc_html__( 'Weblink', 'calendas' )  => empty( $url ) ? '' : '<a href="' . esc_url( $url ) . '">' . esc_url( $url ) . '</a>',
 				esc_html__( 'Email', 'calendas' )    => $email,
 				esc_html__( 'Phone', 'calendas' )    => empty( $phone ) ? '' : '<a href="tel:' . esc_attr( $phone ) . '">' . esc_html( $phone ) . '</a>', // TODO: Output domain instead of full url.
-				esc_html__( 'Address', 'calendas' )  => $address,
+				esc_html__( 'Address', 'calendas' )  => nl2br( $address ),
 				esc_html__( 'Postcode', 'calendas' ) => $postcode,
 				esc_html__( 'City', 'calendas' )     => $city,
 				esc_html__( 'State', 'calendas' )    => $state,
@@ -1121,14 +1126,14 @@ class Calendas {
 			if ( ! empty( $venue ) ) {
 				$trs[ esc_html__( 'Venue', 'calendas' ) ] = '<a href="' . esc_url( get_permalink( $venue ) ) . '">' . get_the_title( $venue ) . '</a>';
 
-				$address   = wp_kses( get_post_meta( $venue, '_' . self::VENUE_ADDRESS, true ) );
+				$address   = wp_kses_post( get_post_meta( $venue, '_' . self::VENUE_ADDRESS, true ) );
 				$postcode  = esc_html( get_post_meta( $venue, '_' . self::VENUE_POSTCODE, true ) );
 				$city      = esc_html( get_post_meta( $venue, '_' . self::VENUE_CITY, true ) );
 				$state     = esc_html( get_post_meta( $venue, '_' . self::VENUE_STATE, true ) );
 				$latitude  = esc_html( get_post_meta( $venue, '_' . self::VENUE_LATITUDE, true ) );
 				$longitude = esc_html( get_post_meta( $venue, '_' . self::VENUE_LONGITUDE, true ) );
 
-				$trs[ esc_html__( 'Address', 'calendas' ) ]  = $address;
+				$trs[ esc_html__( 'Address', 'calendas' ) ]  = nl2br( $address );
 				$trs[ esc_html__( 'Postcode', 'calendas' ) ] = $postcode;
 				$trs[ esc_html__( 'City', 'calendas' ) ]     = $city;
 				$trs[ esc_html__( 'State', 'calendas' ) ]    = $state;

@@ -1,10 +1,10 @@
 === Calendas ===
-Contributors: themes1
+Contributors: themes-1
 Donate link: https://them.es
 Tags: events, calendar, event-calendar, events-calendar
 Requires at least: 6.8
 Tested up to: 7.0
-Stable tag: 0.9.0
+Stable tag: 0.9.1
 Requires PHP: 8.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -30,7 +30,7 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 = Contribution? =
 
 * The Plugin development can be followed via GitHub <3
-* We are happy to receive feature suggestions and pull requests: [https://github.com/them-es](https://github.com/them-es "GitHub")
+* We are happy to receive feature suggestions and pull requests: [https://github.com/them-es/calendas](https://github.com/them-es/calendas "GitHub")
 
 == Screenshots ==
 
@@ -48,9 +48,8 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == External services ==
 
-This plugin can embed a Google Maps iframe when lat/lng geocoordinates are specified by an editor.
-Google Maps is a web mapping platform developed by Google.
-For more information on the data processing please visit: https://www.google.com/help/terms_maps/
+* This plugin can embed a Google Maps iframe when lat/lng geocoordinates are specified by an editor.
+* Google Maps is a web mapping platform developed by Google. For more information on the data processing please visit: https://www.google.com/help/terms_maps/
 
 == Frequently Asked Questions ==
 
@@ -104,6 +103,10 @@ For more information on the data processing please visit: https://www.google.com
 * Priority support via https://them.es/support
 
 == Changelog ==
+
+= 0.9.1 =
+* Fix PHP fatal error in venue address output
+* The Upcoming Events widget now only displays upcoming events
 
 = 0.9.0 =
 * Initial Release - see announcement post on https://them.es/support for more information
