@@ -1,0 +1,10 @@
+#the-list .featured-event .row-title::before {
+	content: "⭐️";
+	display: block;
+	margin-right: 5px;
+}
+
+#the-list .column-details p:last-of-type:not(:first-of-type) {
+	border-top: 1px solid #c3c4c7;
+	padding-top: 0.5rem;
+}

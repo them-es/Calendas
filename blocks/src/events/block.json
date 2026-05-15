@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "calendas/events",
+	"version": "1.0.0",
+	"title": "Events",
+	"category": "text",
+	"icon": "calendar-alt",
+	"description": "",
+	"textdomain": "calendas",
+	"attributes": {
+		"defaultView": {
+			"type": "string",
+			"default": "month"
+		},
+		"showDatepicker": {
+			"type": "boolean",
+			"default": true
+		},
+		"showMonth": {
+			"type": "boolean",
+			"default": true
+		},
+		"showWeek": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDay": {
+			"type": "boolean",
+			"default": true
+		},
+		"showList": {
+			"type": "boolean",
+			"default": true
+		},
+		"firstDayOfWeek": {
+			"type": "number",
+			"default": 1
+		},
+		"weekDays": {
+			"type": "number",
+			"default": 5
+		},
+		"showWeekNumbers": {
+			"type": "boolean",
+			"default": true
+		},
+		"dayBoundariesStart": {
+			"type": "string",
+			"default": "00:00"
+		},
+		"dayBoundariesEnd": {
+			"type": "string",
+			"default": "00:00"
+		},
+		"primaryColor": {
+			"type": "string",
+			"default": ""
+		},
+		"showTimezoneselector": {
+			"type": "boolean",
+			"default": false
+		},
+		"showSearch": {
+			"type": "boolean",
+			"default": true
+		},
+		"showIcs": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"spacing": {
+			"margin": true
+		},
+		"html": false,
+		"multiple": false,
+		"reusable": false,
+		"inserter": true,
+		"interactivity": true
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css",
+	"viewScriptModule": "file:./view.js"
+}

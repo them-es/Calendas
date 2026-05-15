@@ -1,0 +1,268 @@
+@import "@schedule-x/theme-default/dist/index.css";
+
+:root {
+	--sx-color-surface-dim: #dedede;
+}
+
+.calendas-search {
+	display: flex;
+
+	.search-input {
+		max-width: 300px;
+		padding: 0.75rem;
+		cursor: revert;
+
+		&:not(:valid) {
+			~ .clear-search-input {
+				display: none;
+			}
+		}
+	}
+
+	.clear-search-input {
+		display: initial;
+		transform: translateX(calc(-100% - 1rem));
+		background: transparent;
+		border: none;
+		outline: none;
+		font-size: large;
+	}
+}
+
+.wp-block-calendas-events {
+	height: auto;
+	width: 100%;
+	max-width: 1190px;
+	margin-right: auto !important;
+	margin-left: auto !important;
+
+	&.hide-view-selector {
+		.sx__view-selection {
+			display: none;
+		}
+	}
+
+	.featured-event {
+		.sx__month-grid-event-title {
+			display: flex;
+			gap: 6px;
+
+			&::before {
+				content: "⭐️";
+				display: block;
+			}
+		}
+	}
+}
+
+.is-month-grid-view {
+	.sx__view-container {
+		padding-top: 45px;
+	}
+}
+
+.sx__range-heading {
+	font-weight: 600;
+}
+
+.sx__date-picker__month-view-header__month-year {
+	pointer-events: none;
+}
+
+.sx__month-grid-cell {
+	&:has(.passed-event) {
+		filter: saturate(0) opacity(0.6);
+	}
+}
+
+.sx__month-grid-week__week-number {
+	color: var(--sx-color-outline-variant);
+	background-color: transparent;
+	align-items: end;
+	padding-bottom: 8px !important;
+	font-weight: 600;
+	border-inline-end: var(--sx-border);
+}
+
+.sx__month-grid-day__header-day-name {
+	position: absolute;
+	top: -30px;
+	font-weight: 600;
+}
+
+.sx__month-grid-day__header-date {
+	font-size: initial;
+	font-weight: bold;
+	height: auto;
+	width: 100%;
+	background-color: var(--sx-color-surface-container-low);
+	border-radius: 0;
+	padding: 5px 0;
+	margin: 0;
+}
+
+.sx__view-selection-selected-item,
+.sx__calendar-header .sx__date-input,
+.sx__calendar-header .sx__today-button {
+	height: 44px;
+}
+
+.sx__date-grid {
+	overflow-x: clip;
+}
+
+.sx__month-grid-cell {
+	&:hover {
+		.wp-post-image {
+			max-height: 150px;
+		}
+	}
+
+	> div {
+		width: 100%;
+		overflow-x: auto;
+	}
+}
+
+.sx__month-grid-day {
+	padding: 0;
+	min-height: 150px;
+}
+
+.sx__month-grid-day__events {
+	grid-gap: 0;
+}
+
+.sx__month-grid-event,
+.sx__list-event {
+	cursor: pointer;
+}
+
+.sx__view-container {
+	&:has(.sx__is-today) .sx__month-grid-day__header-date,
+	&:has(.sx__is-today)
+		.sx__month-grid-week:has(.sx__is-today)
+		~ .sx__month-grid-week
+		.sx__month-grid-day__header-date {
+		opacity: 1;
+	}
+
+	.sx__month-grid-day__header-date {
+		opacity: 0.5;
+	}
+}
+
+.sx__month-grid-event-time,
+.sx__time-grid-event-time {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin-bottom: 5px;
+
+	> svg {
+		width: 16px;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+
+	> .date {
+		display: none;
+	}
+}
+
+.sx__event {
+	height: auto;
+	position: relative;
+	cursor: pointer;
+	margin: 1px;
+	outline: 1px solid var(--wp--preset--color--base, #fff);
+	//box-shadow: 0 12px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 23px 4px rgba(0, 0, 0, 0.12), 0 5px 7px -4px rgba(0, 0, 0, 0.2);
+
+	.is-day-view & {
+		&.sx__date-grid-event {
+			&.sx__date-grid-event--overflow-left {
+				&.sx__date-grid-event--overflow-right {
+					width: calc(100% - 12px) !important;
+				}
+			}
+		}
+	}
+
+	.is-list-view & {
+		box-shadow: none;
+		outline: none;
+	}
+
+	[class*="title"] {
+		font-weight: bold;
+		white-space: initial;
+	}
+
+	.wp-post-image {
+		display: block;
+		width: 100%;
+		max-width: 150px;
+		height: auto;
+		max-height: 70px;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 8px;
+		margin-top: 0.5rem;
+		transition: max-height 0.25s;
+	}
+}
+
+[popover][data-id] {
+	position: relative;
+	box-shadow:
+		0 24px 38px 3px rgba(0, 0, 0, 0.14),
+		0 9px 46px 8px rgba(0, 0, 0, 0.12),
+		0 11px 15px -7px rgba(0, 0, 0, 0.2);
+	border-radius: 0.5rem;
+	max-height: 390px;
+	min-width: 390px;
+	margin: -50px 0 0 4px;
+	border: none;
+
+	> div {
+		padding: 3rem;
+
+		> small {
+			display: flex;
+			align-items: center;
+			margin-top: 0.5rem;
+			margin-bottom: 0.5rem;
+			font-size: small;
+			gap: 8px;
+
+			> svg {
+				width: 22px;
+				flex-grow: 0;
+				flex-shrink: 0;
+			}
+		}
+	}
+
+	.wp-post-image {
+		display: block;
+		width: 100%;
+		max-width: 430px;
+		height: auto;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 8px;
+		margin-top: 0.5rem;
+	}
+
+	h2 {
+		margin: 0;
+		font-size: larger;
+		font-weight: bold;
+	}
+}
+
+.calendas-custom-controls {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}

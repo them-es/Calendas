@@ -1,0 +1,103 @@
+.upcoming-events {
+	max-width: 290px;
+	font-size: smaller;
+	list-style: none;
+	padding: 3px 0 0 0;
+
+	&.horizontal {
+		min-width: 100%;
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory; /* https://developers.google.com/web/updates/2018/07/css-scroll-snap */
+		overscroll-behavior-x: contain;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+
+		> li {
+			display: flex;
+			align-items: flex-start;
+			margin: 0 2rem 0 0;
+			padding: 0 1rem 1rem;
+			min-width: 22vw;
+			scroll-snap-align: start;
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+
+			.date {
+				margin-top: auto;
+			}
+		}
+	}
+
+	> li {
+		display: flex;
+		align-items: flex-start;
+		margin-bottom: 2rem;
+	}
+
+	.title {
+		margin-top: 0;
+	}
+
+	.date,
+	.venue,
+	.organizer {
+		margin: 0;
+
+		small {
+			display: flex;
+			gap: 10px;
+		}
+
+		svg {
+			flex-grow: 0;
+			flex-shrink: 0;
+			width: 18px;
+		}
+	}
+
+	.calendar {
+		background-color: #fff;
+		display: flex;
+		flex-direction: column;
+		border: 1px solid;
+		border-radius: 5px;
+		text-align: center;
+		min-width: 45px;
+		overflow: hidden;
+		margin-right: 1rem;
+		text-decoration: none;
+		outline: none;
+		font-size: small;
+		font-weight: bold;
+
+		.month {
+			border-bottom: 1px solid;
+			font-size: smaller;
+		}
+
+		.day {
+			font-size: larger;
+			padding: 5px;
+		}
+	}
+
+	.featured-event {
+		.title {
+			&::before {
+				content: "⭐️";
+				display: inline-block;
+				margin-right: 5px;
+			}
+		}
+	}
+}
+
+.wp-editor-only {
+	pointer-events: none;
+}

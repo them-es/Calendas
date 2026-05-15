@@ -1,0 +1,31 @@
+.notice-event {
+	font-size: smaller;
+	background-color: #fffdd6;
+	border: 1px solid #f0eecc;
+	border-radius: 0.5rem;
+	padding: 1.25rem 1.5rem;
+}
+
+.is-content-justification-center {
+	justify-content: center;
+}
+
+body[class*="event"] iframe[src*="embed"] {
+	box-shadow: 0 1rem 1rem -0.5rem rgba(0, 0, 0, 0.15);
+	border-radius: 1rem;
+}
+
+table.event-details {
+	width: 100%;
+	font-size: smaller;
+}
+table.event-details strong {
+	font-weight: bold;
+}
+
+.calendas-event [class*="event-date"] {
+	font-size: smaller;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}

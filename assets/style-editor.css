@@ -1,0 +1,10 @@
+/*!
+ * Theme Editor Styles
+ */
+
+.postbox-container [id*="event_"] label {
+	line-height: 2;
+}
+.postbox-container [id*="event_"] .dashicons {
+	opacity: 0.33;
+}

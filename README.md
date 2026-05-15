@@ -1,0 +1,56 @@
+## Events
+
+📅 An Events Calendar Plugin for WordPress
+
+## What's included?
+
+- Beautiful design
+- Light-weight
+- Fully customizable out of the box with easy configuration
+- Calendar block with several views
+- Upcoming Events: Block and Dashboard widget
+- Core technology: WP-API, Query Loop block integration
+- Responsive layout
+- Multilingual: Polylang and WPML
+- Venues
+- Organizers
+- Geocoding of address fields - powered by openstreetmap.org
+- Embedded Google Maps
+- Fast load time by making use of an intelligent caching method
+
+## Compatible themes
+
+The Plugin should work with any modern WordPress theme that supports the Block editor. Minor style modifications may be required.
+**Heads up:** Please note that the main content area of the **Single/Custom Post Template** needs to be "fullwidth". Having a sidebar may narrow the (invoice) table layout too much.
+
+## Contributing
+
+If you would like to extend this plugin you can fork this repo and create a pull request.
+Bugs or feature requests can be reported by creating a new issue.
+
+### PHP
+
+PHP code follows the [https://developer.wordpress.org/coding-standards/wordpress-coding-standards](WordPress Coding Standards).
+
+### Translations
+
+All translations are managed via [https://translate.wordpress.org/projects/wp-plugins/calendas](translate.wordpress.org). If you have modified translation strings you can update the **POT** file with the following command (WP-CLI required!).
+
+When you're done with the development you can submit a [Pull Request](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests) to this repository.
+
+## Support
+
+This code repository is not suitable for general support requests. If you have a question or need assistence please access our Support forum at [https://them.es/support](https://them.es/support) or submit your question in the Support section of the WordPress Plugin directory (FREE version only).
+
+## Technology
+
+- [schedule-x](https://github.com/schedule-x/schedule-x), [MIT](https://github.com/schedule-x/schedule-x/blob/main/LICENSE)
+- [Gutenberg Block Editor](https://github.com/WordPress/gutenberg), [GPLv2+](https://github.com/WordPress/gutenberg/blob/master/LICENSE.md)
+- [WordPress Scripts](https://github.com/WordPress/gutenberg/tree/master/packages/scripts), [GPLv2+](https://github.com/WordPress/gutenberg/blob/master/packages/scripts/package.json)
+- [webpack](https://github.com/webpack/webpack), [MIT](https://github.com/webpack/webpack/blob/master/LICENSE)
+- [Geocoding with Nominatim OSM-Search](https://operations.osmfoundation.org/policies/nominatim), [GPLv2 license](https://github.com/osm-search/Nominatim)
+
+## Copyright & License
+
+Code and Documentation &copy; [them.es](https://them.es)
+Code released under [GPLv2+](https://www.gnu.org/licenses/gpl-2.0.html)

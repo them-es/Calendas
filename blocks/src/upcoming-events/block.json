@@ -1,0 +1,62 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "calendas/upcoming-events",
+	"version": "1.0.0",
+	"title": "Upcoming Events",
+	"category": "text",
+	"icon": "calendar-alt",
+	"description": "",
+	"textdomain": "calendas",
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": "Upcoming Events"
+		},
+		"perPage": {
+			"type": "number",
+			"default": 10
+		},
+		"layout": {
+			"type": "string",
+			"default": "vertical"
+		},
+		"showVenue": {
+			"type": "boolean",
+			"default": false
+		},
+		"showOrganizer": {
+			"type": "boolean",
+			"default": false
+		},
+		"featuredOnly": {
+			"type": "boolean",
+			"default": false
+		},
+		"featuredFirst": {
+			"type": "boolean",
+			"default": false
+		},
+		"venue": {
+			"type": "number",
+			"default": 0
+		},
+		"organizer": {
+			"type": "number",
+			"default": 0
+		}
+	},
+	"supports": {
+		"spacing": {
+			"margin": true
+		},
+		"html": false,
+		"reusable": false,
+		"inserter": true,
+		"interactivity": true
+	},
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"style": "file:./style-index.css",
+	"viewScriptModule": "file:./view.js"
+}

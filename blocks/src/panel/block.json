@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "calendas/calendas-setup-panel",
+	"title": "Plugin Settings Panel: Calendas Setup",
+	"icon": "admin-tools",
+	"category": "calendas-blocks",
+	"textdomain": "calendas",
+	"supports": {
+		"inserter": false,
+		"reusable": false,
+		"html": false
+	},
+	"editorScript": "file:./index.js"
+}
